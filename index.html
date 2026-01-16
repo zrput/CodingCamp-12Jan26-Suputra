@@ -5,14 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Project</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+    <div class="overlay show" id="nameOverlay">
+        <div class="modal">
+            <h2>Siapa Nama Kamu?</h2>
+            <input type="text" id="userNameInput" placeholder="Masukkan nama kamu">
+            <button id="saveNameBtn">Lanjutkan</button>
+        </div>
+    </div>
+    <div class="overlay" id="welcomeOverlay">
+        <div class="modal">
+            <h2>Selamat Datang 👋</h2>
+            <p id="welcomeText">Halo, User</p>
+            <button id="enterWebsiteBtn">Masuk Website</button>
+        </div>
+    </div>
+
     <header class="navbar">
         <img class="logo" src="assets/revou.jpg" alt="revou">
 
         <ul class="nav-links" id="navLinks">
-            <li><a href="#About">About</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#message">Message Us</a></li>
+            <li><a href="https://www.linkedin.com/in/gedesuputra/">Contact Me</a></li>
         </ul>
 
         <div class="hamburger" id="hamburger">
@@ -27,11 +44,11 @@
             <h1>Hi, I am <span>I Gede Suputra</span></h1>
             <h3>Web Developer</h3>
             <p class="desc">
-                currently studying software engineering through codecamp revou
+                currently studying software engineering through coding camp revou
             </p>
 
-            <a href="" class="btn">
-                <i class="fas far fa-envelope"> Contact Me</i>
+            <a href="https://www.linkedin.com/in/gedesuputra/" class="btn">
+                <i> Contact Me</i>
             </a>
         </div>
 
@@ -45,21 +62,111 @@
             <div class="about-text">
                 <h2>About Me</h2>
                 <p>
-                    I am a passionate web developer with experience building modern,
-                    responsive, and user-friendly web applications. I enjoy turning
-                    complex problems into simple, beautiful solutions.
+                    I'm a recent graduate currently enrolled in the Software Engineer program at RevoU Coding Camp. 
+                    During this program, I learned modern web development using HTML, CSS, and JavaScript, as well as how to use GitHub. 
+                    This experience honed my technical skills and problem-solving abilities, such as addressing syntax errors, 
+                    while also developing my professional mindset as a software engineer.
                 </p>
             </div>
 
+            <div class="divider"></div>
+
             <div class="about-skills">
-                <h3>Skills</h3>
+                <h3>skills Learned</h3>
                 <div class="skills">
-                    <img src="assets/html.png" alt="HTML">
-                    <img src="assets/css.png" alt="CSS">
-                    <img src="assets/js.png" alt="JavaScript">
+                    <div class="skill-item">
+                        <i class="fa-brands fa-html5"></i>
+                        <span>HTML</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-css3-alt"></i>
+                        <span>CSS</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-git-alt"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-github"></i>
+                        <span>Github</span>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="message" id="message">
+        <div class="message-container">
+            <form class="message-form" id="messageForm">
+                <div class="alert" id="alertBox">
+                    <span id="alertMessage"></span>
+                </div>
+                <h2>Form Message Us</h2>
+                <div class="form-group">
+                    <label>Nama</label>
+                    <input type="text" id="name" placeholder="Your Name">
+                </div>
+
+                <div class="form-group">
+                    <label>Tanggal Lahir</label>
+                    <input type="date" id="date">
+                </div>
+
+                <div class="form-group">
+                    <label>Jenis Kelamin</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" id="male" name="gender" value="laki-laki">
+                            Laki-laki
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" id="female" value="perempuan">
+                            Perempuan
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Pesan</label>
+                    <textarea name="message-area" id="message-area"></textarea>
+                </div>
+
+                <button type="submit">Send</button>
+            </form>
+            
+            <div class="message-preview">
+                <h2>Message Preview</h2>
+                <div class="preview-item">
+                    <span>current time</span>
+                    <p id="preview-time">-</p>
+                </div>
+
+                <div class="preview-item">
+                    <span>Nama</span>
+                    <p id="preview-name">-</p>
+                </div>
+
+                <div class="preview-item">
+                    <span>Tanggal Lahir</span>
+                    <p id="preview-date">-</p>
+                </div>
+
+                <div class="preview-item">
+                    <span>Jenis Kelamin</span>
+                    <p id="preview-gender">-</p>
+                </div>
+
+                <div class="preview-item">
+                    <span>Pesan</span>
+                    <p id="preview-message">-</p>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <script src="js/script.js"></script>
